@@ -1,6 +1,9 @@
-package model;
+package model.course;
 
 import java.util.Set;
+
+import model.Student;
+import model.Teacher;
 
 /**
  * Description: <br/>
@@ -20,6 +23,30 @@ public class Course {
      */
     public Course(String courseName, int courseID) {
         fullName = courseName + courseID;
+    }
+
+    /**
+     * the course marks of the student
+     */
+    private int marks;
+
+    /**
+     * Get the marks.
+     *
+     * @return the marks
+     */
+    public final int getMarks() {
+        return marks;
+    }
+
+    /**
+     * Set the marks.
+     *
+     * @param marks
+     *            the marks to set
+     */
+    public final void setMarks(int marks) {
+        this.marks = marks;
     }
 
     /**
@@ -163,6 +190,11 @@ public class Course {
         return true;
     }
 
+    /**
+     * the toString will show the details of the Course, like teachers, name, info, etc.
+     * 
+     * @see java.lang.Object#toString()
+     */
     public final String toString() {
         String teachers = "\n\t";
         for (Teacher t : courseTeachers) {

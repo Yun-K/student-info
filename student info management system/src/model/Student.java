@@ -1,6 +1,13 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import model.course.Course;
+
 public class Student extends Person {
+    private Map<Course, Integer> courseMarks_map;
+
     /**
      * A constructor. It construct a new instance of Student.
      *
@@ -13,7 +20,7 @@ public class Student extends Person {
      */
     public Student(String name, int id, boolean isMale) {
         super(name, id, isMale);
-        // TODO Auto-generated constructor stub
+        setCourseMarks_map(new HashMap<Course, Integer>());
     }
 
     public void enrollCourse(Course courseToEnroll) {
@@ -32,6 +39,38 @@ public class Student extends Person {
             System.err.println("Course not found, please re-enter the course name ");
         }
         super.courses.add(courseToEnroll);
+    }
+
+    public void removeCourse(Course courseToRemove) {
+        if (courseToRemove == null) {
+            throw new IllegalArgumentException("Must enter the course name and id");
+        }
+        super.courses.remove(courseToRemove);
+    }
+
+    public void showAllCoursesMarks() {
+
+        for (Course course : super.courses) {
+
+        }
+    }
+
+    /**
+     * Get the courseMarks_map.
+     *
+     * @return  the courseMarks_map
+     */
+    public Map<Course, Integer> getCourseMarks_map() {
+        return courseMarks_map;
+    }
+
+    /**
+     * Set the courseMarks_map.
+     *
+     * @param   courseMarks_map    the courseMarks_map to set
+     */
+    public void setCourseMarks_map(Map<Course, Integer> courseMarks_map) {
+        this.courseMarks_map = courseMarks_map;
     }
 
 }
