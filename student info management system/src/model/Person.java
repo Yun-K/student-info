@@ -21,6 +21,9 @@ public abstract class Person {
      */
     protected int id;
 
+    /** Password of the account */
+    private String password;
+
     /**
      * either Male or Female.
      */
@@ -125,6 +128,25 @@ public abstract class Person {
      */
     public final void setCourses(Set<Course> courses) {
         this.courses = courses;
+    }
+
+    /**
+     * Get the password.
+     *
+     * @return the password
+     */
+    public final String getPassword() {
+        return password;
+    }
+
+    /**
+     * Set the password.
+     *
+     * @param password
+     *            the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }
